@@ -1,1 +1,9 @@
+# COVID19 Information Web App
+## Project Overview
+This is my final project for CSCI 403 - Database Management. It is an application which allows for interfacing with a SQL database to retrieve data and statistics about COVID19 in the US. Users may use dropdowns to find their state and county with information such as case and death count. Users may also search by entering in the name of their county and state. Lastly, users can get updated information about the states and counties with the most cases, the average cases per state and county, and the total cases in the US. All information is queried from an SQL database and served on HTML templates by a Flask Python driven server. The user must have a valid database to store the information and a login for that database. All handling and querying of data is handled by the Python server using PG8000. Queries are set up in such a way that they will always grab the data from the most recent available date (which is currently 05/02/2020). Data was provided by the New York Times Github Repo: https://github.com/nytimes/covid-19-data.
 
+## Instructions
+If you are interested in using this application, you must have a PostgreSQL server setup. In the file, database-bulkload, one may find a CSV with current data (which can also be downloaded from the New York Times Repo), and a script which will automatically create the table needed to run the app, bulkload the data into the database, and index the table for optimization purposes. To run the app, simply open a terminal and run the run_windows.cmd on windows, or run_linux.sh on linux or mac. It will host the web app locally, and you can use it in the browser.
+
+## Dependencies
+To run this app, you will need a PostgreSQL server, Python3, Flask, PG8000, and the ability to use the command line.
