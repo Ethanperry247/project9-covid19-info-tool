@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Database Project 9</title>
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/global.css') }}">
+    </head>
+
+    <body>
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login Page</a></li>
+            <li><a href="{{ url_for('main') }}">Home Page</a></li>
+            <li><a href="{{ url_for('search') }}">Find a County</a></li>
+            <li><a href="{{ url_for('searchbar') }}">Search</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li class="right"><a>Welcome User: {{ username }}</a></li>
+        </ul>
+        <h1>Dashboard</h1>
+        <h4>Welcome User: {{ username }}</h4>
+        <p>
+            Times during the coronavirus have proven to be very difficult.
+            The dissemination of information is as important as ever, so I created this web application
+            for users to get information on their counties, states, and the US as a whole. 
+            The information is updated almost every day from the New York Times, and this app can be 
+            updated simply by downloading their data and running the SQL script I created. I hope you 
+            may find this application useful!
+        </p>
+        <a href="{{ url_for('search') }}">
+            <button>
+                Click Here to Find Your County.
+            </button>
+        </a>
+        <br>
+        <a href="{{ url_for('searchbar') }}">
+            <button>
+                Click Here to Search By Name.
+            </button>
+        </a>
+
+        <!-- <p>Raw Data: </p> -->
+        <!-- Loop through raw data set. -->
+        <!-- {% for item in data %}
+            <p>{{ item }}</p>
+        {% endfor %} -->
+    </body>
+</html>
+
+
+<!-- All for the attempted JS chart. -->
+<!-- <script src="//www.amcharts.com/lib/4/core.js"></script>
+<script src="//www.amcharts.com/lib/4/charts.js"></script>
+<script src="//www.amcharts.com/lib/4/maps.js"></script>
+<script src="//www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/usaLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/region/usa/usaCountiesLow.js"></script> -->
+
+<!-- Attempted a county chart. Works, but loads WAY too slowly. -->
+<!-- <script>
+// Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_region_usa_usaCountiesLow;
+
+// Set projection
+chart.projection = new am4maps.projections.AlbersUsa();
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+polygonSeries.useGeodata = true;
+
+// Configure series
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+polygonTemplate.fill = am4core.color("#74B266");
+</script> -->

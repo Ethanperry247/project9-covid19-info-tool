@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Database Project 9</title>
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/global.css') }}">
+    </head>
+
+    <body>
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login Page</a></li>
+            <li><a href="{{ url_for('main') }}">Home Page</a></li>
+            <li><a href="{{ url_for('search') }}">Find a County</a></li>
+            <li><a href="{{ url_for('searchbar') }}">Search</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li class="right"><a>Welcome User: {{ username }}</a></li>
+        </ul>
+        <h1>Search County By Name</h1>
+        <form action="{{ url_for('county') }}" method="POST">
+            <label>Enter State Name: </label><br>
+            <input type="text" name="state"><br><br>
+            <label>Enter a Valid County Name: </label><br>
+            <input type="text" name="county"><br><br>
+            <button type="submit">Get Information.</button>
+        </form>
+    </body>
+</html>
